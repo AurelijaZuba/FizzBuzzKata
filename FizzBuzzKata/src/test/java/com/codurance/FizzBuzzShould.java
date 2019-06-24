@@ -32,4 +32,5 @@ public class FizzBuzzShould {
     void return_Fizz_when_multiple_of_three() {
         assertThat(fizzBuzz.calculate(3)).isEqualTo("Fizz");
     }
+
 }
