@@ -37,7 +37,8 @@ public class FizzBuzzShould {
 
     @ParameterizedTest
     @CsvSource({
-            "5, Buzz"
+            "5, Buzz",
+            "10, Buzz"
     })
     void return_Buzz_when_multiple_of_five(int input, String expected) {
         assertThat(fizzBuzz.calculate(input)).isEqualTo(expected);
