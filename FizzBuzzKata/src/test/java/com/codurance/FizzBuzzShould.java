@@ -1,30 +1,30 @@
 package com.codurance;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.in;
 
 public class FizzBuzzShould {
 
 
-    @Test
-    void return_one_when_passing_one() {
-        FizzBuzz fizzBuzz = new FizzBuzz();
+    private FizzBuzz fizzBuzz;
 
-        assertThat(fizzBuzz.calculate(1)).isEqualTo("1");
+    @BeforeEach
+    void setUp() {
+        fizzBuzz = new FizzBuzz();
     }
 
-    @Test
-    void return_two_when_passing_two() {
-        FizzBuzz fizzBuzz = new FizzBuzz();
-
-        assertThat(fizzBuzz.calculate(2)).isEqualTo("2");
-    }
-
-    @Test
-    void return_four_when_passing_four() {
-        FizzBuzz fizzBuzz = new FizzBuzz();
-
-        assertThat(fizzBuzz.calculate(4)).isEqualTo("4");
+    @ParameterizedTest
+    @CsvSource({
+            "1,1",
+            "2,2",
+            "4,4"
+    })
+    public void return_string_value_of_number_for_non_multiples_of_three_or_five(int input, String expected) {
+       assertThat(fizzBuzz.calculate(input)).isEqualTo(expected);
     }
 }
