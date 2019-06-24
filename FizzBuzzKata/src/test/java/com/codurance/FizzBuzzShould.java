@@ -20,4 +20,11 @@ public class FizzBuzzShould {
 
         assertThat(fizzBuzz.calculate(2)).isEqualTo("2");
     }
+
+    @Test
+    void return_four_when_passing_four() {
+        FizzBuzz fizzBuzz = new FizzBuzz();
+
+        assertThat(fizzBuzz.calculate(4)).isEqualTo("4");
+    }
 }
