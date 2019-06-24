@@ -27,4 +27,9 @@ public class FizzBuzzShould {
     public void return_string_value_of_number_for_non_multiples_of_three_or_five(int input, String expected) {
        assertThat(fizzBuzz.calculate(input)).isEqualTo(expected);
     }
+
+    @Test
+    void return_Fizz_when_multiple_of_three() {
+        assertThat(fizzBuzz.calculate(3)).isEqualTo("Fizz");
+    }
 }
