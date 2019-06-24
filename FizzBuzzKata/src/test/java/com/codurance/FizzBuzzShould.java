@@ -34,4 +34,12 @@ public class FizzBuzzShould {
     public void return_Fizz_when_multiple_of_three(int input, String expected) {
         assertThat(fizzBuzz.calculate(input)).isEqualTo(expected);
     }
+
+    @ParameterizedTest
+    @CsvSource({
+            "5, Buzz"
+    })
+    void return_Buzz_when_multiple_of_five(int input, String expected) {
+        assertThat(fizzBuzz.calculate(input)).isEqualTo(expected);
+    }
 }
