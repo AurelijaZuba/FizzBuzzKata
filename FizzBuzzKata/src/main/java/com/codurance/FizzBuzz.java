@@ -7,7 +7,7 @@ public class FizzBuzz {
 
     public String calculate(int number) {
         if(isMultipleOf5(number) && isMultipleOf3(number))
-            return "FizzBuzz";
+            return FIZZ + BUZZ;
         if(isMultipleOf5(number))
             return BUZZ;
         if(isMultipleOf3(number))
