@@ -28,7 +28,8 @@ public class FizzBuzzShould {
 
     @ParameterizedTest
     @CsvSource({
-            "3, Fizz"
+            "3, Fizz",
+            "6, Fizz"
     })
     public void return_Fizz_when_multiple_of_three(int input, String expected) {
         assertThat(fizzBuzz.calculate(input)).isEqualTo(expected);
