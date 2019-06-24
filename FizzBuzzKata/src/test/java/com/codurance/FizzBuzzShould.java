@@ -1,12 +1,10 @@
 package com.codurance;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.in;
 
 public class FizzBuzzShould {
 
@@ -28,9 +26,11 @@ public class FizzBuzzShould {
        assertThat(fizzBuzz.calculate(input)).isEqualTo(expected);
     }
 
-    @Test
-    void return_Fizz_when_multiple_of_three() {
-        assertThat(fizzBuzz.calculate(3)).isEqualTo("Fizz");
+    @ParameterizedTest
+    @CsvSource({
+            "3, Fizz"
+    })
+    public void return_Fizz_when_multiple_of_three(int input, String expected) {
+        assertThat(fizzBuzz.calculate(input)).isEqualTo(expected);
     }
-
 }
