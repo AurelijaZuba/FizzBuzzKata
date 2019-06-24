@@ -11,6 +11,6 @@ public class FizzBuzzShould {
     void return_one_when_passing_one() {
         FizzBuzz fizzBuzz = new FizzBuzz();
 
-        assertThat(fizzBuzz.calculate(1)).isEqualTo(1);
+        assertThat(fizzBuzz.calculate(1)).isEqualTo("1");
     }
 }
