@@ -1,6 +1,7 @@
 package com.codurance;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -42,5 +43,10 @@ public class FizzBuzzShould {
     })
     void return_Buzz_when_multiple_of_five(int input, String expected) {
         assertThat(fizzBuzz.calculate(input)).isEqualTo(expected);
+    }
+
+    @Test
+    void return_FizzBuzz_when_multiples_of_three_and_five() {
+        assertThat(fizzBuzz.calculate(15)).isEqualTo("FizzBuzz");
     }
 }
