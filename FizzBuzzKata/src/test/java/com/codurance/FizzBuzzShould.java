@@ -13,4 +13,11 @@ public class FizzBuzzShould {
 
         assertThat(fizzBuzz.calculate(1)).isEqualTo("1");
     }
+
+    @Test
+    void return_two_when_passing_two() {
+        FizzBuzz fizzBuzz = new FizzBuzz();
+
+        assertThat(fizzBuzz.calculate(2)).isEqualTo("2");
+    }
 }
